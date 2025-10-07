@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="UnityEngine.UIElements ">
+    <ui:VisualElement class="root">
+        <ui:Button name="add-button" text="Add Item" class="button"/>
+        <ui:ScrollView name="inventory-container" class="inventory"/>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,4 @@
+repository "UnityDeveloperSkillCheckJuniorEdition/UnityDeveloperSkillCheckJuniorEdition@7971530042707@cloud"
+  path "/"
+    br "/main"
+    co "/main"

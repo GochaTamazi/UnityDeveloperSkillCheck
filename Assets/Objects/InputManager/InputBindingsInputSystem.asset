@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdd9def2b4f2bd41bdefe7f6240ec7b, type: 3}
+  m_Name: InputBindingsInputSystem
+  m_EditorClassIdentifier: 
+  bindings:
+  - actionName: HighlightObjects
+    keys: 0300000028000000
+    mouseButtons: 
+  - actionName: CenterOnSelection
+    keys: 5200000014000000
+    mouseButtons: 
+  - actionName: CameraKeyMoveForward
+    keys: 250000003f000000
+    mouseButtons: 
+  - actionName: CameraKeyMoveBack
+    keys: 2100000040000000
+    mouseButtons: 
+  - actionName: CameraKeyMoveLeft
+    keys: 0f0000003d000000
+    mouseButtons: 
+  - actionName: CameraKeyMoveRight
+    keys: 120000003e000000
+    mouseButtons: 
+  - actionName: CameraKeyRotationLeft
+    keys: 1f00000047000000
+    mouseButtons: 
+  - actionName: CameraKeyRotationRight
+    keys: 1300000042000000
+    mouseButtons: 
+  - actionName: CameraMouseRotationKey
+    keys: 35000000
+    mouseButtons: 02000000
+  - actionName: MousePan
+    keys: 33000000
+    mouseButtons: 02000000
+  - actionName: UnitsMultipleSelection
+    keys: 3300000034000000
+    mouseButtons: 
+  - actionName: CameraSelectionManagerHandleMouseInput
+    keys: 
+    mouseButtons: 00000000
+  - actionName: MovePlayerToPosition
+    keys: 
+    mouseButtons: 01000000
+  - actionName: SelectorTargetObject
+    keys: 
+    mouseButtons: 00000000
