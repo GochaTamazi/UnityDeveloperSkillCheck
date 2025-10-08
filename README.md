@@ -67,7 +67,11 @@ Create a simple **Editor script** that adds an **Align to Ground** button in the
 
 
 
-https://github.com/user-attachments/assets/2a2bc051-48af-4bc8-848a-9994fa37ae51
+
+https://github.com/user-attachments/assets/1a1091aa-35a4-4b52-9615-c546a7c92ac8
+
+
+
 
 
 
