@@ -21,15 +21,37 @@ namespace Tools.Editor
         private void AlignObjectToGround(AlignToGround aligner)
         {
             Transform objTransform = aligner.transform;
+            Renderer renderer = objTransform.GetComponentInChildren<Renderer>();
 
-            if (Physics.Raycast(objTransform.position + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit,
-                    aligner.raycastDistance))
+            if (renderer == null)
+            {
+                Debug.LogWarning($"AlignToGround: {objTransform.name} has no Renderer to calculate bounds.");
+                return;
+            }
+
+            // Определяем нижнюю точку объекта
+            Bounds bounds = renderer.bounds;
+            Vector3 bottomPoint = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
+
+            // Пускаем Raycast немного выше, чтобы не попасть в сам объект
+            Vector3 rayOrigin = bottomPoint + Vector3.up * 0.5f;
+
+            if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, aligner.raycastDistance))
             {
                 Undo.RecordObject(objTransform, "Align to Ground");
-                objTransform.position = hit.point;
 
-                // 💡 Bonus - the ability to delete an element
-                objTransform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                // Смещение от pivot до нижней точки
+                float bottomOffset = bottomPoint.y - objTransform.position.y;
+
+                // Выставляем объект так, чтобы низ модели касался земли
+                objTransform.position = new Vector3(
+                    objTransform.position.x,
+                    hit.point.y - bottomOffset,
+                    objTransform.position.z
+                );
+
+                // 💡 Бонус: выравнивание под наклон поверхности
+                objTransform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal) * objTransform.rotation;
             }
             else
             {
